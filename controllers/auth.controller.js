@@ -1,8 +1,10 @@
 import User from "../models/users.model.js";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
+import dotenv from "dotenv";
+dotenv.config();
 
-const JWT_SECRET = "secret_key_123"; // sau này chuyển sang .env
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // Đăng ký
 export const register = async (req, res) => {

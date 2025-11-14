@@ -5,7 +5,7 @@ import Product from '../models/products.model.js';
 export const index = async (req, res) => {
   const find = {
     deleted: false,
-    status: "active "
+    status: "active"
   }
   try {
     const products = await Product.find(find);
@@ -13,6 +13,7 @@ export const index = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: "Lỗi khi lấy danh sách sản phẩm", error });
   }
+ 
 };
 
 // [GET] /api/products?category=category&brand=brand Lấy sản phẩm theo bộ lọc
