@@ -25,7 +25,6 @@ export const createOrder = async (req, res) => {
     const user = await User.findById(userId);
     user.cart = [];
     await user.save();
-
     res.status(201).json({ message: "Đặt hàng thành công", order });
   } catch (error) {
     res.status(500).json({ message: "Lỗi khi tạo đơn hàng", error: error.message });
